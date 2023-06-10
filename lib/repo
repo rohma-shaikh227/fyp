@@ -1,0 +1,43 @@
+// import 'dart:io';
+// import 'package:flutter/material.dart';
+// import 'package:face_camera/face_camera.dart';
+// import 'package:audioplayers/audioplayers.dart';
+// // import 'sendsms.dart';
+// import 'package:tflite_flutter/tflite_flutter.dart';
+// import 'alertmsg.dart';
+// bool isDrowsy = false;
+// AudioPlayer audioPlayer = AudioPlayer();
+
+// // Function to process drowsiness detection using your model
+// Future<void> detectDrowsiness(param0) async {
+//   // Call your drowsiness detection model here
+//   // Update the 'isDrowsy' variable based on the detection result
+//   var i=0;
+//   var msg="You are drowsy";
+//   final player = AudioPlayer();
+//   while (i<5){
+//     if (i==4) {
+//       await player.play(DeviceFileSource('assets/alarm/sound1.wav'));
+//       showAlertDialog(context,msg);
+//       // await player.stop();
+//
+//
+//
+//       // sendSms();
+//     }
+//     i++;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+

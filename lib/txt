@@ -1,0 +1,110 @@
+// import 'dart:io';
+// import 'package:flutter/material.dart';
+// import 'package:face_camera/face_camera.dart';
+//
+// import 'tflite_helper.dart';
+//
+// class DetectionPage extends StatefulWidget {
+//   @override
+//   _DetectionPageState createState() => _DetectionPageState();
+// }
+//
+// class _DetectionPageState extends State<DetectionPage> {
+//   String msg ='no thing';
+//   @override
+//   void initState() {
+//     super.initState();
+//     loadModel();
+//   }
+//
+//   @override
+//   void dispose() async {
+//     super.dispose();
+//     closeModel();
+//   }
+//
+//   Future<void> loadModel() async {
+//     // Load the TensorFlow Lite model and labels
+//     await TFLiteHelper.loadModel();
+//   }
+//
+//   Future<void> closeModel() async {
+//     // Close the TensorFlow Lite interpreter
+//     await TFLiteHelper.closeModel();
+//   }
+//
+//   void processImageForDrowsiness(File? image) async {
+//     // if (image != null) {
+//     //   // Perform drowsiness detection using the loaded model
+//     //   final results = await TFLiteHelper.runModelOnImage(image);
+//     //   // Process the results as per your requirement
+//     // }
+//     if (image != null) {
+//       final results = await TFLiteHelper.runModelOnImage(image);
+//
+//       if (results != null && results.isNotEmpty) {
+//         final firstResult = results[0];
+//         final label = firstResult['label'];
+//
+//         // Check if the label indicates closed eyes or drowsiness
+//         if (label == 'open_eye') {
+//
+//           // Eyes are closed
+//           msg=('Eyes are closed. Driver is drowsy.');
+//           // Perform any action or show an alert for drowsiness
+//         } else {
+//           // Eyes are open
+//           print('Eyes are open. Driver is alert.');
+//         }
+//       }
+//     }
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         backgroundColor: Colors.green,
+//         title: Text('Drowsiness Detection'),
+//       ),
+//       body: Container(
+//         padding: EdgeInsets.all(20.0),
+//         child: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             children: [
+//               Expanded(
+//                 flex: 1,
+//                 child: SmartFaceCamera(
+//                   autoCapture: true,
+//                   defaultCameraLens: CameraLens.front,
+//                   onCapture: processImageForDrowsiness,
+//                   showControls: false,
+//                 ),
+//               ),
+//               SizedBox(height: 20.0),
+//               Text(
+//                 "",
+//                 style: TextStyle(
+//                   fontSize: 20.0,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//               ),
+//               SizedBox(height: 20.0),
+//               ElevatedButton(
+//                 onPressed: () {
+//                   // Start the detection manually if needed
+//                 },
+//                 style: ElevatedButton.styleFrom(
+//                   primary: Colors.green,
+//                 ),
+//                 child: Text('Start Detection'),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
